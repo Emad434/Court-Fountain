@@ -17,32 +17,36 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Admin.splashscreen');
 });
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', function () {
+        return view('Admin.index');
+    });
 
-Route::get('/Dashboard', function () {
-    return view('Admin.dashboard');
+    Route::get('/Dashboard', function () {
+        return view('Admin.dashboard');
+    });
+
+    Route::get('/Latest-News', function () {
+        return view('Admin.latest_news');
+    });
+
+    Route::get('/Practices', function () {
+        return view('Admin.practices');
+    });
+
+    Route::get('/Roles', function () {
+        return view('Admin.roles');
+    });
+
+    Route::get('/Courses', function () {
+        return view('Admin.courses');
+    });
+
+    Route::get('/Chat', function () {
+        return view('Admin.chat');
+    });
 });
 
-Route::get('/Latest-News', function () {
-    return view('Admin.latest_news');
-});
-
-Route::get('/Practices', function () {
-    return view('Admin.practices');
-});
-
-Route::get('/Roles', function () {
-    return view('Admin.roles');
-});
-
-Route::get('/Courses', function () {
-    return view('Admin.courses');
-});
-
-Route::get('/Chat', function () {
-    return view('Admin.chat');
-});
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
