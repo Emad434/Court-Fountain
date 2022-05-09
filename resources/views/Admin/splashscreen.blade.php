@@ -14,7 +14,7 @@
       <ul id="menu"> 
         <li class="undefined logo menu-logo "><a href="index.html"><img src="./src/img/logo.png" alt="#{logoMenu}"/><img class="logo-small court" src="./src/img/court justice.jpg" alt="#{logoMenu}"/></a></li>
         <div class="undefined menu-links " id="menu_links">
-          <li class="button"><a class="btn btn-sm btn-primary" href="splashscreen.html">Register</a>
+          <li class="button"><a class="btn btn-sm btn-primary" href="/register">Register</a>
           </li>
           <li class="button"><a class="btn btn-sm btn-default primary" href="/Dashboard">Login</a>
           </li>
