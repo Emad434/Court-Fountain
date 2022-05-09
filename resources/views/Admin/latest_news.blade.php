@@ -18,6 +18,7 @@
                   <p>/</p>
                   <p>Breadcumb Article News Example</p>
                 </div>
+              
                 <div class="buttons"></div>
               </div>
             </div>
@@ -25,7 +26,13 @@
         </div>
       </div>
     </section>
-    <section class="d-flex f-grow lg-padding bg-gray" id="empty"></section>
+    <section class="d-flex f-grow lg-padding bg-gray" id="empty">
+      <form …>
+       <textarea name="editor1" id="editor" cols="30" rows="10"></textarea>
+      
+      </form>
+
+    </section>
     <div class="line_hr"></div>
     <footer class="text-dark">
       <div class="container pt-2">
@@ -41,10 +48,26 @@
     </footer>
   </div>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
+  
+
 </body>
 @include('Admin.files.script_files')
+
 <script>
+ 
   AOS.init({
       easing: 'ease-in-out-sine'
   });
+</script>
+<script>
+  ClassicEditor
+  
+      .create( document.querySelector( '#editor' ),{
+        ckfinder: {
+            uploadUrl: 'http://127.0.0.1:8000/public/Images'
+        }
+    } )
+      .catch( error => {
+          console.error( error );
+      } );
 </script>
