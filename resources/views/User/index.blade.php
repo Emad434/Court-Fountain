@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('Admin.files.style_files')
+@include('User.files.style_files')
 
 </html>
 
@@ -734,7 +734,7 @@
     </footer>
     <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
 </body>
-@include('Admin.files.script_files')
+@include('User.files.script_files')
 <script>
     AOS.init({
         easing: 'ease-in-out-sine'

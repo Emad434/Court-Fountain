@@ -1,8 +1,10 @@
-@extends('layouts.Admin.admin')
-@section('title')Courses @endsection
-@section('content')
-
-<div class="main_content top-fixed">
+<!DOCTYPE html>
+<html lang="en">
+    @include('User.files.style_files')
+</html>
+<body class="aos-all" id="transcroller-body">
+    @include('layouts.User.nav_bar')
+  <div class="main_content top-fixed">
     <section class="lg-padding" id="gallery">
       <div class="container">
         <div class="container-header mb-5">
@@ -124,4 +126,10 @@
     </footer>
   </div>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
-@endsection
+</body>
+@include('User.files.script_files')
+<script>
+  AOS.init({
+      easing: 'ease-in-out-sine'
+  });
+</script>

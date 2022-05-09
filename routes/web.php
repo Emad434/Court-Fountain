@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,35 +17,52 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Admin.splashscreen');
+    return view('splashscreen');
 })->middleware('guest');
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', function () {
-        return view('Admin.index');
-    });
+    Route::group(['prefix'=>'/admin','middleware'=>['role:Admin']], function () {
+        Route::get('/Dashboard', function(){
+            return view('Admin.dashboard');
+        });
+        Route::get('/News', function () {
+            return view('Admin.latest_news');
+        });
+        Route::get('/Roles', function () {
+            return view('Admin.roles');
+        });
 
-    Route::get('/Dashboard', function () {
-        return view('Admin.dashboard');
+        Route::get('/Courses', function () {
+            return view('Admin.courses');
+        });
     });
+    Route::group(['middlware' => ['role:User']], function (){
+        Route::get('/home', function () {
+            return view('User.index');
+        });
 
-    Route::get('/Latest-News', function () {
-        return view('Admin.latest_news');
-    });
+        Route::get('/Dashboard', function () {
+            return view('User.dashboard');
+        });
 
-    Route::get('/Practices', function () {
-        return view('Admin.practices');
-    });
+        Route::get('/Latest-News', function () {
+            return view('User.latest_news');
+        });
 
-    Route::get('/Roles', function () {
-        return view('Admin.roles');
-    });
+        Route::get('/Practices', function () {
+            return view('User.practices');
+        });
 
-    Route::get('/Courses', function () {
-        return view('Admin.courses');
-    });
+        Route::get('/Roles', function () {
+            return view('User.roles');
+        });
 
-    Route::get('/Chat', function () {
-        return view('Admin.chat');
+        Route::get('/Courses', function () {
+            return view('User.courses');
+        });
+
+        Route::get('/Chat', function () {
+            return view('User.chat');
+        });
     });
 });
 

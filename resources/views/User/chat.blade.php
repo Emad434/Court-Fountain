@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('Admin.files.style_files')
+    @include('User.files.style_files')
 </html>
 <body class="aos-all" id="transcroller-body">
-   
-  
+
+
     <menu class=" container menu" id="home">
         <nav class="undefined main-menu animate__animated animate__bounceInDown " id="menu">
           <label class="show-menu" for="show-menu">
@@ -13,7 +13,7 @@
             </div>
           </label>
           <input id="show-menu" type="checkbox"/>
-          <ul id="menu"> 
+          <ul id="menu">
             <li class="undefined logo menu-logo "><a href="index.html"><img src="./src/img/logo.png" alt="#{logoMenu}"/><img class="logo-small court" src="./src/img/court justice.jpg" alt="#{logoMenu}"/></a></li>
             <div class="undefined menu-links " id="menu_links">
               <li class="button no-margin"><a class="btn btn-sm btn-" href="#"><i class="fas fa-search"></i></a>
@@ -28,7 +28,7 @@
           </ul>
         </nav>
       </menu>
-   
+
   <div class="main_content top-fixed full-width">
     <div id="frame">
       <div id="sidepanel">
@@ -58,7 +58,7 @@
           <input type="text" placeholder="Search Contacts">
         </div>
         <div id="contacts">
-          <ul> 
+          <ul>
             <li class="contact">
               <div class="wrap"><span class="contact-status online"></span><img src="src/img/users/user-6.png"/>
                 <div class="meta">
@@ -132,7 +132,7 @@
   </div>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
 </body>
-@include('Admin.files.script_files')
+@include('User.files.script_files')
 <script>
   AOS.init({
       easing: 'ease-in-out-sine'
