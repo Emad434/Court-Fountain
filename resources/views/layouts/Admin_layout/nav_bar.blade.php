@@ -16,8 +16,10 @@
           <li class="button no-margin"><a class="btn btn-sm btn-" href="#"><i class="fas fa-calendar-alt"></i></a>
           </li>
         
-          <li><a href="/">Logout</a></li>
-        
+          <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
         </div>
       </ul>
     </nav>

@@ -26,7 +26,7 @@
                     </li>
                     <li class="button no-margin"><a class="btn btn-sm btn-" href="#"><i
                                 class="fas fa-calendar-alt"></i></a>
-                    </li><a class="btn btn-sm btn-default primary" href="dashboard.html">Dashboard</a>
+                    </li><a class="btn btn-sm btn-default primary" href="/Dashboard">Dashboard</a>
                 </div>
             </ul>
         </nav>

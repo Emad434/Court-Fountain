@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -49,7 +50,7 @@ class LoginController extends Controller
       
        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))){
          
-           return redirect('Admin.dashboard');
+           return redirect('/Dashboard');
        }
        else{
         return redirect()->back()->with('msg','Invalid username or password');
