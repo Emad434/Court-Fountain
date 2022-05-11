@@ -1,16 +1,14 @@
 @extends('layouts.Admin.admin')
-@section('title')
-    Roles
-@endsection
+@section('title')Courses @endsection
 @section('page')
     @php
-        $page = 'roles';
+        $page = 'courses';
     @endphp
 @endsection
 @section('content')
     <div class="main_content top-fixed">
         <section class="lg-padding" style="padding-left:40px; padding-right:40px;">
-            <button style="float: right;">Add</button>
+            <a class="btn btn-primary"  style="float: right;" href="{{ route('courses.create') }}"><i class="fa-solid fa-plus"></i></a>
             <table id="table" class="table table-striped table-bordered" width="100%"></table>
         </section>
     </div>
@@ -55,23 +53,19 @@ var dataSet = [
     [ "Martena Mccray", "Post-Sales support", "Edinburgh", "8240", "2011/03/09", "$324,050" ],
     [ "Unity Butler", "Marketing Designer", "San Francisco", "5384", "2009/12/09", "$85,675" ]
 ];
-
 $(document).ready(function() {
     var table = $('#table').DataTable( {
         responsive: true,
-        data: dataSet,
+        data:{!! json_encode($course) !!},
         columns: [
-            { title: "Name" },
-            { title: "Position" },
-            { title: "Office" },
-            { title: "Extn." },
-            { title: "Start date" },
-            { title: "Salary" },
+            { title: "Title", data:"title" },
+            { title: "Subtitle", data:"subtitle" },
+            { title: "Code", data:"code" },
             {
                 title: "Actions",
                 data: null,
                 render: function ( data, type, row ) {
-                  return '<button>View</button> <button>Edit</button> <button>Delete</button>';
+                  return '<div class="d-flex"><a class="btn btn-circle d-flex btn-md btn-primary mr-1" style="justify-content: center; align-items: center;" ><i class="fa-solid fa-eye"></i></a> <a class="btn btn-circle d-flex btn-md btn-primary mr-1" style="justify-content: center; align-items: center;"><i class="fa-solid fa-pen-to-square"></i></a> <a class="btn btn-circle d-flex btn-md btn-primary mr-1" style="justify-content: center; align-items: center;" ><i class="fa-solid fa-trash"></i></a></div>';
                 }
               }
         ],
@@ -84,3 +78,4 @@ $(document).ready(function() {
     } );
 } );
 @endsection
+

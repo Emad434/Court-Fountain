@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -21,18 +22,22 @@ Route::get('/', function () {
 })->middleware('guest');
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix'=>'/admin','middleware'=>['role:Admin']], function () {
+        Route::get('Users', function(){
+            return view('Admin.users');
+        });
         Route::get('/Dashboard', function(){
             return view('Admin.dashboard');
         });
         Route::get('/News', function () {
-            return view('Admin.latest_news');
+            return view('Admin.news');
         });
         Route::get('/Roles', function () {
             return view('Admin.roles');
         });
-
-        Route::get('/Courses', function () {
-            return view('Admin.courses');
+        Route::group(['prefix'=>'Courses'], function(){
+            Route::get('/',[CourseController::class, 'index'])->name('courses');
+            Route::get('/create',[CourseController::class, 'create'])->name('courses.create');
+            Route::post('/store',[CourseController::class, 'store'])->name('course.store');
         });
     });
     Route::group(['middlware' => ['role:User']], function (){

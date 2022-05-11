@@ -1,10 +1,10 @@
 @extends('layouts.Admin.admin')
 @section('title')
-    Roles
+    News
 @endsection
 @section('page')
     @php
-        $page = 'roles';
+        $page = 'news';
     @endphp
 @endsection
 @section('content')
@@ -84,3 +84,4 @@ $(document).ready(function() {
     } );
 } );
 @endsection
+

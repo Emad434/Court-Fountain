@@ -2,6 +2,11 @@
 @section('title')
     Dashboard
 @endsection
+@section('page')
+    @php
+        $page = 'dashboard';
+    @endphp
+@endsection
 @section('content')
     <div class="main_content top-fixed">
         <section class="lg-padding mt-3 mb-5" id="intro">
