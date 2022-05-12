@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('Admin.files.style_files')
+    @include('User.files.style_files')
 </html>
 <body class="aos-all" id="transcroller-body">
 
-    @include('layouts.Admin_layout.nav_bar')
+    @include('layouts.User.nav_bar')
 
   <div class="main_content top-fixed">
     <input type="checkbox" id="target-modal">
@@ -37,7 +37,7 @@
             <div class="container container-header">
               <div class="subtitle"><span>How many people die from drug use?</span></div>
             </div>
-            <div class="container"> 
+            <div class="container">
               <div class="quote pt-3">
                 <blockquote>
                   <p class="pt-1">The CDC reports that in 2016, the rate of overdose deaths was more than three times the rate in 1999.6 The pattern of drugs involved in drug overdose deaths has changed in recent years. The rate of drug overdose deaths involving synthetic opioids other than methadone doubled from 3.1 per 100,000 in 2015 to 6.2 in 2016, with about half of all overdose deaths being related to the synthetic opioid fentanyl, which is cheap to get and added to a variety of illicit drugs.</p>
@@ -104,7 +104,7 @@
     <section class="lg-padding bg-gray2" id="understanding_trauma">
       <div class="aos-item" data-aos="fade-down" data-aos-duration="250" data-aos-delay="0" data-aos-easing="ease-out" data-aos-anchor-placement="top-bottom">
         <div class="aos-item__inner">
-          <div class="container"> 
+          <div class="container">
             <div class="container container-header">
               <div class="title"><span class="subtitle">Understanding Trauma</span></div>
             </div>
@@ -237,7 +237,7 @@
             </div>
             <!---->
             <div class="content">
-              <div class="split margin-row"> 
+              <div class="split margin-row">
                 <div class="card blue_card"><a class="content pt-3 pb-3" href="#roles_judge">
                     <div class="container-header">
                       <div class="title">
@@ -304,7 +304,7 @@
       <div class="container pt-2">
         <div class="content">
           <div class="footer-content">
-            <div class="copyright"> 
+            <div class="copyright">
               <p>Center for Court Innovation © All Rights Reserved</p>
             </div>
             <div class="social"><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-facebook-f"></i></a><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-twitter"></i></a></div>
@@ -315,7 +315,7 @@
   </div>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
 </body>
-@include('Admin.files.script_files')
+@include('User.files.script_files')
 <script>
   AOS.init({
       easing: 'ease-in-out-sine'

@@ -4,7 +4,7 @@
 @endsection
 @section('page')
     @php
-    $page = 'roles';
+    $page = 'users';
     @endphp
 @endsection
 @section('content')

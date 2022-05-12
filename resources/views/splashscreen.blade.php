@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  @include('Admin.files.style_files')
+  @include('User.files.style_files')
 </html>
 <body class="aos-all" id="transcroller-body">
   <menu class=" container menu" id="home">
@@ -11,7 +11,7 @@
         </div>
       </label>
       <input id="show-menu" type="checkbox"/>
-      <ul id="menu"> 
+      <ul id="menu">
         <li class="undefined logo menu-logo "><a href="index.html"><img src="./src/img/logo.png" alt="#{logoMenu}"/><img class="logo-small court" src="./src/img/court justice.jpg" alt="#{logoMenu}"/></a></li>
         <div class="undefined menu-links " id="menu_links">
           <li class="button"><a class="btn btn-sm btn-primary" href="/register">Register</a>
@@ -93,9 +93,9 @@
       <div class="aos-item" data-aos="fade-up" data-aos-duration="400" data-aos-delay="0" data-aos-easing="ease-out" data-aos-anchor-placement="top-bottom">
         <div class="aos-item__inner">
           <div class="carousel-slider">
-            <div class="swiper"> 
+            <div class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/mar_14_1_06_51_PM.jpg"/>
                     <div class="slide-content">
                       <h5>Hon. Marcia Hirsch</h5>
@@ -103,7 +103,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/IMG_1939.jpg"/>
                     <div class="slide-content">
                       <h5>Stephanie Pamrow, past Graduate and Peer Navigator</h5>
@@ -111,7 +111,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/IMG_1948.jpg"/>
                     <div class="slide-content">
                       <h5>Athena McCrory, Legal Aid, BDTC Defense</h5>
@@ -119,7 +119,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/IMG_4912.jpg"/>
                     <div class="slide-content">
                       <h5>Brooklyn Drug Court Team</h5>
@@ -127,7 +127,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/IMG_1982.jpg"/>
                     <div class="slide-content">
                       <h5>Hon. Judge Betty Calvo-Torres</h5>
@@ -135,7 +135,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide bg-gray"> 
+                <div class="swiper-slide bg-gray">
                   <div class="carousel-slider-animate-opacity image"><img src="src/img/uploads/IMG_2034.jpg"/>
                     <div class="slide-content">
                       <h5>Chief Justice Hon. Judge Craig Hannah</h5>
@@ -153,7 +153,7 @@
       </div>
     </div>
     <div class="preview-box">
-      <div class="details"><span class="title"> 
+      <div class="details"><span class="title">
           <p class="current-img"> </p>
           <p class="total-img"></p></span><span class="icon fas fa-times"></span></div>
       <div class="image-box">
@@ -234,7 +234,7 @@
               </div>
             </div>
             <div class="footer-content">
-              <div class="copyright"> 
+              <div class="copyright">
                 <p>Center for Court Innovation © All Rights Reserved</p>
               </div>
               <div class="social"><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-facebook-f"></i></a><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-twitter"></i></a></div>
@@ -246,7 +246,7 @@
   </footer>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
 </body>
-@include('Admin.files.script_files')
+@include('User.files.script_files')
 <script>
   AOS.init({
       easing: 'ease-in-out-sine'

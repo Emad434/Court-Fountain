@@ -47,20 +47,21 @@ class LoginController extends Controller
         $input = $request->all();
         $user_check = User::where('email',$input['email'])->first();
         if( $user_check != null){
-      
-       if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))){
-         
-           return redirect('/Dashboard');
-       }
+            if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))){
+                if ($user_check->hasRole('Admin')) {
+                    // dd(true);
+                    return redirect(('/admin/Dashboard'));
+                }
+                return redirect('/Dashboard');
+            }
        else{
         return redirect()->back()->with('msg','Invalid username or password');
-
        }
-    
+
 }
 else{
     return redirect()->back()->with('msg','Email Not Exist');
 }
-    
+
     }
 }

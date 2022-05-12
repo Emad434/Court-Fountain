@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    @include('Admin.files.style_files')
+    @include('User.files.style_files')
 </html>
 <body class="aos-all" id="transcroller-body">
-    @include('layouts.Admin_layout.nav_bar')
+    @include('layouts.User.nav_bar')
   <div class="main_content top-fixed">
     <section class="lg-padding" id="gallery">
       <div class="container">
@@ -116,7 +116,7 @@
       <div class="container pt-2">
         <div class="content">
           <div class="footer-content">
-            <div class="copyright"> 
+            <div class="copyright">
               <p>Center for Court Innovation © All Rights Reserved</p>
             </div>
             <div class="social"><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-facebook-f"></i></a><a class="btn btn-lg btn-circle btn-social d-flex-centered"><i class="fab fa-twitter"></i></a></div>
@@ -127,7 +127,7 @@
   </div>
   <div class="shaded" id="backToTop" onclick="goTop()"><i class="fas fa-angle-up"> </i></div>
 </body>
-@include('Admin.files.script_files')
+@include('User.files.script_files')
 <script>
   AOS.init({
       easing: 'ease-in-out-sine'
