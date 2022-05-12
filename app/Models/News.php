@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Course extends Model
+class News extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'title',
-        'subtitle',
-        'code'
+        'file_name'
     ];
 }

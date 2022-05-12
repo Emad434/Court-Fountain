@@ -29,10 +29,6 @@
       </div>
     </section>
     <section class="d-flex f-grow lg-padding bg-gray" id="empty">
-      <form …>
-       <textarea name="editor1" id="editor" cols="30" rows="10"></textarea>
-
-      </form>
 
     </section>
     <div class="line_hr"></div>
@@ -54,56 +50,9 @@
 
 </body>
 @include('User.files.script_files')
-<script src="./ckfinder/ckfinder.js"></script>
 <script>
 
   AOS.init({
       easing: 'ease-in-out-sine'
   });
-</script>
-<script>
-
-// CKEDITOR.replace( 'editor' );
-
-ClassicEditor
-.create(  document.querySelector( '#editor' ),{
-
-		ckfinder: {
-			uploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
-
-
-		},
-   // toolbar: [ 'ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
-	} )
-                                .then( editor => {
-                                        console.log( editor );
-                                } )
-                                .catch( error => {
-                                        console.error( error );
-                                } );
-//   CKEDITOR.replace( 'editor', {
-//     plugins: 'wysiwygarea,toolbar,format',
-//     extraAllowedContent: 'b i',
-//     on: {
-//         instanceReady: function( evt ) {
-//             var editor = evt.editor;
-
-//             editor.filter.check( 'h1' ); // -> true (thanks to Format combo)
-//             editor.filter.check( 'b' ); // -> true (thanks to extraAllowedContent)
-//             editor.setData( '<h1><i>Foo</i></h1><p class="left"><b>Bar</b> <a href="http://foo.bar">foo</a></p>' );
-//             // Editor contents will be:
-//             '<h1><i>Foo</i></h1><p><b>Bar</b> foo</p>'
-//         }
-//     }
-// } );
-  // ClassicEditor
-
-  //     .create( document.querySelector( '#editor' ),{
-  //       ckfinder: {
-  //           uploadUrl: 'http://127.0.0.1:8000/public/Images'
-  //       }
-  //   } )
-  //     .catch( error => {
-  //         console.error( error );
-  //     } );
 </script>

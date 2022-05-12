@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\UserController;
-use App\Models\User;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +27,14 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/Dashboard', function(){
             return view('Admin.dashboard');
         });
-        Route::get('/News', function () {
-            return view('Admin.news');
+        Route::group(['prefix' => '/News'],function() {
+            Route::get('/',[NewsController::class, 'index'])->name('news');
+            Route::get('/editor',function(){return view('Admin.News.editor');})->name('news.editor');
+            Route::post('store',[NewsController::class, 'store'])->name('news.store');
+            Route::get('/view/{id}',[NewsController::class, 'view'])->name('news.view');
+            Route::get('/editor/{id}',[NewsController::class, 'edit'])->name('news.edit');
+            Route::post('/update',[NewsController::class, 'update'])->name('news.update');
+            Route::get('/delete/{id}',[NewsController::class, 'delete'])->name('news.delete');
         });
         Route::get('/Roles', function () {
             return view('Admin.roles');
@@ -38,6 +43,9 @@ Route::group(['middleware' => 'auth'], function () {
             Route::get('/',[CourseController::class, 'index'])->name('courses');
             Route::get('/create',[CourseController::class, 'create'])->name('courses.create');
             Route::post('/store',[CourseController::class, 'store'])->name('course.store');
+            Route::get('/edit/{id}',[CourseController::class, 'edit'])->name('course.edit');
+            Route::post('/update',[CourseController::class, 'update'])->name('course.update');
+            Route::get('/delete/{id}',[CourseController::class, 'delete'])->name('course.delete');
         });
     });
     Route::group(['middlware' => ['role:User']], function (){

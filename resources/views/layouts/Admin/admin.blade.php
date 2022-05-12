@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/r-2.2.9/datatables.min.css"/>
     <script type="module" src="{{ asset('src/js/core.js') }}"></script>
     <link rel="modulepreload" href="{{ asset('src/js/swiper.bundle.min.js') }}">
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
 
@@ -58,8 +59,8 @@
             <li><a class="@if ($page == 'dashboard') active @endif" href="/admin/Dashboard"><i class="fas fa-gauge"></i><span
                         class="links_name">Dashboard</span></a><span class="tooltip">Dashboard</span></li>
             <li><a class="@if ($page == 'users') active @endif" href="/admin/Users"><i class="fas fa-user"></i><span class="links_name">Users</span></a><span class="tooltip">Users</span></li>
-            <li><a class="@if ($page == 'news') active @endif" href="/admin/News"><i class="fa-solid fa-newspaper"></i><span class="links_name">News</span></a><span class="tooltip">News</span></li>
-            <li><a class="@if ($page == 'roles') active @endif" href="/admin/Roles"><i class="fa-solid fa-users"></i><span class="links_name">Roles</span></a><span class="tooltip">Roles</span></li>
+            <li><a class="@if ($page == 'news') active @endif" href="{{ route('news') }}"><i class="fa-solid fa-newspaper"></i><span class="links_name">News</span></a><span class="tooltip">News</span></li>
+            {{-- <li><a class="@if ($page == 'roles') active @endif" href="/admin/Roles"><i class="fa-solid fa-users"></i><span class="links_name">Roles</span></a><span class="tooltip">Roles</span></li> --}}
             <li><a class="@if ($page == 'courses') active @endif" href="{{ route('courses') }}"><i class="fas fa-laptop-file"></i><span class="links_name">Courses</span></a><span class="tooltip">Courses</span></li>
         </ul>
     </div>
@@ -68,15 +69,10 @@
 <script src="{{ asset('src/js/jquery.min.js') }}"> </script>
 <script src="{{ asset('src/js/index.js') }}"> </script>
 <script src="{{ asset('src/js/aos.js') }}"> </script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/b-print-2.2.2/r-2.2.9/datatables.min.js"></script>
-<script>
-    @yield('js')
-</script>
 <script>
   AOS.init({
       easing: 'ease-in-out-sine'
   });
 </script>
+@yield('js')
 </html>
