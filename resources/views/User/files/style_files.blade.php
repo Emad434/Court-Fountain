@@ -6,5 +6,7 @@
     <link rel="stylesheet" href="./src/css/style.min.css">
     <script type="module" src="./src/js/core.js"> </script>
     <link rel="modulepreload" href="./src/js/swiper.bundle.min.js">
+   {{-- <link rel="stylesheet" type="text/css" href="trix.css"> --}}
+  
     <title>Center for Court Innovation : Splashscreen</title>
   </head>
